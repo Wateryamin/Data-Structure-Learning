@@ -28,7 +28,7 @@ int Length(Stack* p) {
 }
 bool push(Stack* p, ElemType elem) {
 	if (IsFull(p)) {
-		perror("Õ»Âú£¡");
+		perror("æ ˆæ»¡ï¼");
 		return false;
 	}
 	p->data[++p->top] = elem;
@@ -36,7 +36,7 @@ bool push(Stack* p, ElemType elem) {
 }
 int pop(Stack* p) {
 	if (IsEmpty(p)) {
-		perror("Õ»¿Õ£¡");
+		perror("æ ˆç©ºï¼");
 	}
 	return p->data[p->top--];
 }
@@ -49,5 +49,5 @@ int main() {
 	}
 	assert(Length(&stack) == 5);
 	int popelem = pop(&stack);
-	printf("µ¯³öÔªËØÎª%d\n", popelem);
+	printf("å¼¹å‡ºå…ƒç´ ä¸º%d\n", popelem);
 }
