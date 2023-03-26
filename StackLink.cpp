@@ -36,7 +36,7 @@ bool push(LinkStack* p,ElemType elem) {
 
 ElemType pop(LinkStack* p) {
 	if (p->size == 0) {
-		perror("ջ��!");
+		perror("Õ»¿Õ!");
 	}
 	ElemType cur = p->top->data;
 	p->top = p->top->next;
