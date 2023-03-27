@@ -1,0 +1,31 @@
+#删除链表的倒数第 N 个结点
+给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
+
+
+(```)
+struct ListNode {
+  int val;
+  struct ListNode *next;
+};
+
+struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
+    struct ListNode* fast,* slow;
+    struct ListNode* DannyNode;
+    DannyNode  = malloc(sizeof(struct ListNode)); 
+    DannyNode->next = head;
+    fast = slow = DannyNode;
+    while(n-- && fast!=NULL){
+        fast = fast->next;
+    } 
+    fast = fast->next;
+    while(fast != NULL){
+        fast = fast->next;
+        slow = slow->next;
+    }
+    slow->next = slow->next->next;
+    return DannyNode->next;
+}
+(```)
+##思路
+用了双指针法，先让fast走while循环，然后再让slow和fast同时移动，直到fast指向NULL。
+目的是为了让slow在fast指向NULL时候相差n个位置以达到删除节点。
